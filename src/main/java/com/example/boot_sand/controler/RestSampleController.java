@@ -11,10 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.boot_sand.entity.Item;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 // @Controller
 @RestController // Bodyをレスポンスとする
 public class RestSampleController {
+	static Logger logger = LoggerFactory.getLogger(RestSampleController.class);
 
 	@RequestMapping(value="/test", method=RequestMethod.GET, headers="Accept=application/*", params="id=002")
 	public String test() {
